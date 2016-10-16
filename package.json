@@ -1,0 +1,22 @@
+{
+  "name": "pokemoninnode",
+  "version": "1.0.0",
+  "description": "A showdown alike for node.js",
+  "main": "pokemon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xltunited/pokemonInNode.git"
+  },
+  "author": "Eddy Leon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xltunited/pokemonInNode/issues"
+  },
+  "homepage": "https://github.com/xltunited/pokemonInNode#readme",
+  "dependencies": {
+    "inquirer": "^1.2.2"
+  }
+}
