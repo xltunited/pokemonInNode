@@ -1,5 +1,7 @@
 var inquirer = require('inquirer');
 
+var teams = require('./pokemonTeam.js');
+
 function gameStart(){
 
 	console.log();
@@ -43,13 +45,119 @@ function gameStart(){
 
 	console.log('Good Luck Red!');
 
-	optionsBeforeBattle('a')
+	console.log();
+
+	optionsBeforeBattle()
 
 }
 
-function optionsBeforeBattle(a){
+function seePokemon(){
 
-	console.log("here");
+	inquirer.prompt([
+
+	{
+
+		type: 'list',
+
+		name: "chosenPokemon",
+
+		message: "Which pokemon would you like to see?",
+
+		choices: [teams.allTeams.redTeam[0].name, teams.allTeams.redTeam[1].name, teams.allTeams.redTeam[2].name, teams.allTeams.redTeam[3].name, teams.allTeams.redTeam[4].name, teams.allTeams.redTeam[5].name, 'Go Back']
+
+	}
+
+
+	]).then(function(selection){
+
+		if(selection.chosenPokemon != 'Go Back'){
+
+			for(var i = 0; i < teams.allTeams.redTeam.length; i++){
+
+				if (teams.allTeams.redTeam[i].name == selection.chosenPokemon){
+
+					console.log('=======================================================================================================================');
+					console.log('=======================================================================================================================');
+
+					console.log('|| Pokemon: ' + teams.allTeams.redTeam[i].name);
+
+					console.log('|| Type: ' + teams.allTeams.redTeam[i].type);
+
+					if(teams.allTeams.redTeam[i].secondType != 'none'){
+
+						console.log('|| Secondary Type: ' + teams.allTeams.redTeam[i].secondType);
+
+					}
+
+					console.log('|| About: ' + teams.allTeams.redTeam[i].info);
+
+					console.log('|| Gender: ' + teams.allTeams.redTeam[i].gender);
+
+					console.log('|| Hit Points: ' + teams.allTeams.redTeam[i].hp);
+
+					console.log('|| Attack: ' + teams.allTeams.redTeam[i].attack);
+
+					console.log('|| Defense: ' + teams.allTeams.redTeam[i].defense);
+
+					console.log('|| Special Attack: ' + teams.allTeams.redTeam[i].specialAttack);
+
+					console.log('|| Special Defense: ' + teams.allTeams.redTeam[i].specialDefense);
+
+					console.log('|| Speed: ' + teams.allTeams.redTeam[i].Speed);
+
+					console.log('=======================================================================================================================');
+					console.log('=======================================================================================================================');
+
+				}
+
+			}
+
+			seePokemon();
+
+		} else {
+
+			optionsBeforeBattle();
+
+		}
+
+	});
+
+}
+
+function optionsBeforeBattle(){
+
+	inquirer.prompt([
+
+	{
+
+		type: 'list',
+
+		name: "userInput",
+
+		message: "What would you like to do?",
+
+		choices: ['See my Team', 'Change Team Order', "Enough, Lets Battle!"]
+
+	}
+
+
+	]).then(function(answer){
+
+		if(answer.userInput == 'See my Team'){
+
+			seePokemon();
+
+		} else if (answer.userInput == 'Change Team Order') {
+
+			
+
+		} else if( answer.userInput == "Enough, Lets Battle!"){
+
+
+
+		}
+
+	});
 
 }
 
