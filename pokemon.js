@@ -274,19 +274,21 @@ function chooseOpponent(){
 
 	]).then(function(decision){
 
-		if(desicion.opponentSelection == 'Lorelei'){
+		if(decision.opponentSelection == 'Lorelei'){
 
-			
+			var myTeam = [teams.allTeams.redTeam[0].forUse(), teams.allTeams.redTeam[1].forUse(), teams.allTeams.redTeam[2].forUse(), teams.allTeams.redTeam[3].forUse(), teams.allTeams.redTeam[4].forUse(), teams.allTeams.redTeam[5].forUse()];
 
-		} else if(desicion.opponentSelection == 'Bruno'){
+			battleDecision(myTeam, createTeams('Lorelei'));
 
-
-
-		} else if(desicion.opponentSelection == 'Agatha'){
+		} else if(decision.opponentSelection == 'Bruno'){
 
 
 
-		} else if(desicion.opponentSelection == 'Lance'){
+		} else if(decision.opponentSelection == 'Agatha'){
+
+
+
+		} else if(decision.opponentSelection == 'Lance'){
 
 
 
@@ -296,15 +298,21 @@ function chooseOpponent(){
 
 }
 
-function createTeams(opponentName){
+function battleDecision(teamOne, teamTwo){
 
-	var myTeam = [teams.allTeams.redTeam[0].forUse(), teams.allTeams.redTeam[1].forUse(), teams.allTeams.redTeam[2].forUse(), teams.allTeams.redTeam[3].forUse(), teams.allTeams.redTeam[4].forUse(), teams.allTeams.redTeam[5].forUse()];
+	console.log(teamOne + teamTwo);
+
+}
+
+function createTeams(opponentName){
 
 	var opponentTeam;
 
 	if(opponentName == 'Lorelei'){
 
-		opponentTeam = [teams.allTeams.loreleiTeam[0].forUse(), teams.allTeams.loreleiTeam[1].forUse(), teams.allTeams.loreleiTeam[2].forUse(), teams.allTeams.loreleiTeam[3].forUse(), teams.allTeams.loreleiTeam[4].forUse(), teams.allTeams.loreleiTeam[5].forUse()];
+		opponentTeam = [teams.allTeams.loreleiTeam[0].forUse(), teams.allTeams.loreleiTeam[1].forUse(), teams.allTeams.loreleiTeam[2].forUse(), teams.allTeams.loreleiTeam[3].forUse(), teams.allTeams.loreleiTeam[4].forUse()];
+
+		return opponentTeam;
 
 	}
 
