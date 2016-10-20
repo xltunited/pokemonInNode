@@ -32,6 +32,12 @@ function pokemon(name, type, secondType, info, gender, hp, attack, defense, spec
 
 	this.status = 'none';
 
+	this.forUse = function(){
+
+		return new pokemon(name, type, secondType, info, gender, hp, attack, defense, specialAttack, specialDefense, speed, move1, move2, move3, move4);
+
+	}
+
 }
 
 var Poliwrath = new pokemon('Poliwrath', 'Water', 'Fighting' , 'An adept swimmer at both the front crawl and breast stroke. Easily overtakes the best human swimmers.', 'Male', 321, 289, 226, 176, 216, 239, 'Water Gun', 'Ice Beam' , 'Double Team', 'Seismic Toss');
@@ -46,9 +52,13 @@ var Gyarados = new pokemon('Gyarados', 'Water', 'Flying', 'Rarely seen in the wi
 
 var Aerodactyl = new pokemon('Aerodactyl', 'Rock', 'Flying', "A ferocious, prehistoric Pokémon that goes for the enemy's throat with its serrated saw-like fangs.", 'Male', 364, 309, 166, 156, 186, 296, 'Dragon Claw', 'Take Down', 'Crunch', 'Ancient Power');
 
+var Dewgong = new pokemon('Dewgong', 'Water', 'Ice', "Stores thermal energy in its body. Swims at a steady 8 knots even in intensely cold waters.", 'Female', 384, 176, 196, 176, 289, 176, '')
+
 exports.allTeams = {
 
-	redTeam : [Poliwrath, Venusaur, Pikachu, Snorlax, Gyarados, Aerodactyl]
+	redTeam : [Poliwrath, Venusaur, Pikachu, Snorlax, Gyarados, Aerodactyl],
+
+	loreleiTeam : []
 	
 
 }

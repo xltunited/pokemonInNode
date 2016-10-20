@@ -112,8 +112,6 @@ function seePokemon(){
 
 			}
 
-			seePokemon();
-
 		} else {
 
 			optionsBeforeBattle();
@@ -249,11 +247,66 @@ function optionsBeforeBattle(){
 
 		} else if( answer.userInput == "Enough, Lets Battle!"){
 
+			chooseOpponent();
+
+		}
+
+	});
+
+}
+
+function chooseOpponent(){
+
+	inquirer.prompt([
+
+	{
+
+		type: 'list',
+
+		name: "opponentSelection",
+
+		message: "Whom would you like to battle?",
+
+		choices: ['Lorelei', 'Bruno', 'Agatha', 'Lance']
+
+	}
+
+
+	]).then(function(decision){
+
+		if(desicion.opponentSelection == 'Lorelei'){
+
+			
+
+		} else if(desicion.opponentSelection == 'Bruno'){
+
+
+
+		} else if(desicion.opponentSelection == 'Agatha'){
+
+
+
+		} else if(desicion.opponentSelection == 'Lance'){
+
 
 
 		}
 
 	});
+
+}
+
+function createTeams(opponentName){
+
+	var myTeam = [teams.allTeams.redTeam[0].forUse(), teams.allTeams.redTeam[1].forUse(), teams.allTeams.redTeam[2].forUse(), teams.allTeams.redTeam[3].forUse(), teams.allTeams.redTeam[4].forUse(), teams.allTeams.redTeam[5].forUse()];
+
+	var opponentTeam;
+
+	if(opponentName == 'Lorelei'){
+
+		opponentTeam = [teams.allTeams.loreleiTeam[0].forUse(), teams.allTeams.loreleiTeam[1].forUse(), teams.allTeams.loreleiTeam[2].forUse(), teams.allTeams.loreleiTeam[3].forUse(), teams.allTeams.loreleiTeam[4].forUse(), teams.allTeams.loreleiTeam[5].forUse()];
+
+	}
 
 }
 
